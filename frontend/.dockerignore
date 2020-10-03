@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# yarn
+build
+node_modules
