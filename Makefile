@@ -21,13 +21,17 @@ up:
 devb:
 	docker-compose --env-file ./.env.composefile up nginx app db
 
-.PHONY: updevb
-updevb:
-	docker-compose --env-file ./.env.composefile up app db
-
 .PHONY: upf
 upf:
 	docker-compose --env-file ./.env.composefile up frontend
+
+.PHONY: updev
+updev:
+	docker-compose --env-file ./.env.composefile up app db frontend
+
+.PHONY: updevb
+updevb:
+	docker-compose --env-file ./.env.composefile up app db
 
 ########################################
 # into Docker container
