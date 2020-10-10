@@ -7,10 +7,11 @@ WORKDIR /app
 RUN apt-get update -y
 
 # install npm packages
+COPY ./package.json /app
 COPY ./yarn.lock /app
-RUN npm upgrade --global yarn && yarn install
+RUN yarn install
 
 # add src
 COPY ./ /app
 
-CMD ["yarn", "start"]
+CMD yarn start
