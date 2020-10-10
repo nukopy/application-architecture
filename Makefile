@@ -13,6 +13,10 @@ check-env:
 build:
 	docker-compose --env-file ./.env.composefile build
 
+.PHONY: buildf
+buildf:
+	docker-compose --env-file ./.env.composefile build frontend
+
 .PHONY: up
 up:
 	docker-compose --env-file ./.env.composefile up
