@@ -1,0 +1,41 @@
+{
+    "detail": [
+        // Literal の場合のエラー    
+        {
+            "loc": [
+                "body",
+                "item",
+                "image",
+                "extension"
+            ],
+            "msg": "unexpected value; permitted: 'png', 'jpg', 'jpeg'",
+            "type": "value_error.const",
+            "ctx": {
+                "given": "hoge",
+                "permitted": [
+                    "png",
+                    "jpg",
+                    "jpeg"
+                ]
+            }
+        },
+        // Enum の場合のエラー    
+        {
+            "loc": [
+                "body",
+                "item",
+                "image",
+                "extension_enum"
+            ],
+            "msg": "value is not a valid enumeration member; permitted: 'png', 'jpg', 'jpeg'",
+            "type": "type_error.enum",
+            "ctx": {
+                "enum_values": [
+                    "png",
+                    "jpg",
+                    "jpeg"
+                ]
+            }
+        }
+    ]
+}
