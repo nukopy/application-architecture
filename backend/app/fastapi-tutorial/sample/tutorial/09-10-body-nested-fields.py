@@ -62,12 +62,19 @@ class Offer(ObjectBase):
     items: List[Item]
 
 
+# item
 item_list = [
     {"name": "Indian Curry", "price": "1000"},
     {"name": "Coffee", "price": "500"},
     {"name": "Orange Juice", "price": "450"},
 ]
 item_models = [Item.create(item) for item in item_list]
+
+# offer
+offer_list = [
+    {"name": f"OFFER {i}", "price": 750 * (i), "items": item_list} for i in range(1, 10)
+]
+offer_models = [Offer.create(offer) for offer in offer_list]
 
 
 @app.post("/images/multiple")
